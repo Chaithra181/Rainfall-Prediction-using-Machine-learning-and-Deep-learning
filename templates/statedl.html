@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="javascript" href="{{ url_for('static', filename='js/main.js') }}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  </head>
+  <body>
+    <nav class="navbar v1">
+	<span class="nav-toggle"></span>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Rainfall Prediction</label>
+	      <ul>
+        <li><a  href="home">Home</a></li>
+        <li><a class="active" href="statedl">State Wise</a></li>
+        <li><a href="districtsdl">District Wise</a></li>
+        <li><a href="predictiondl">Prediction</a></li>
+
+      </ul>
+    </nav>
+<div class="wrapper">
+	<section>
+	<div class="container">
+    <div class="group">
+      <p class="text">state wise prediction</p>
+       <form action="/graph" method="post">
+      <input id="i1"  name="state" list="states" type="text">
+    </div>
+    <div>
+      <datalist id="states" class="list"></datalist>
+    </div>
+      <div class="group">
+		<p class="text">Select year</p>
+      <input id="i2" name="year" list="year" type="text">
+	  </div>
+	    <div>
+      <datalist id="year" class="list1"></datalist>
+    </div>
+	<button>Submit</button>
+
+        {% block content %}
+
+        {% endblock %}
+        </form>
+
+  </div>
+  </section>
+  </div>
+  <script src="{{ url_for('static', filename='js/main1.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/main2.js') }}"></script>
+
+     </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "state.html" %}
+{% block content %}
+   <h1>{{ state }}</h1>
+    <div style="position: relative; height: 40vh; width: 80vw">
+      <canvas id="StChart" width="400" height="400"></canvas>
+    </div>
+	 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <script>
+      var stateHtml = document.getElementById('StChart').getContext('2d');
+      var createChart = new Chart(stateHtml, {
+        type: 'bar',
+        data: {
+          labels: ['APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'],
+          datasets: [{
+            label: 'Prediction',
+			backgroundColor: 'rgba(255, 999, 132, 1)',
+			borderColor: 'rgb(255,9,13)',
+			borderWidth:3,
+			data: {{ temp[0] }},
+			fill:true            
+          },
+		  {
+            label: 'Actual',
+			backgroundColor: 'rgba(255, 99, 132, 0.2)',
+			borderColor: 'rgb(255,9,13)',
+			borderWidth:3,
+			data: {{ temp[1] }},
+			fill:true            
+          }]
+		  },
+        options: {
+            maintainAspectRatio: false
+        }
+      });
+	</script> 
+	{% endblock %}

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+    body
+    {
+    background-image:url({{ url_for('static', filename='images/rainfall.jpg')}})
+    }
+    </style>
+
+<title>login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+<div class="Login-Page">
+<div class="form">
+<form class="Register-Form">
+<input type="text" placeholder="user name"/>
+<input type="text" placeholder="password"/>
+<input type="text" placeholder="email id"/>
+<button>Create</button>
+<p  class="message">Already Registered?<a href="#">Login</a></p>
+</form>
+<form class="Login-Form" action="/" method = "POST">
+<input type="text" placeholder="name" name="name"/>
+<input type="password" placeholder="password" name="password"/>
+<button type="Submit">Submit</button>
+<p  class="message">Not Registered?<a href="#">Register</a></p>
+</form>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+$('.message a').click(function(){
+$('form').animate({height: "toggle", opacity:"toggle"},"slow");
+});
+</script>
+</body>
+</html>

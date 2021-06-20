@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<style>
+	body {background-image:url({{ url_for('static', filename='images/img1.jpg')}});
+	height:100vh;
+	background-size:cover;
+	background-position:center;}
+  button.b1{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ margin-left:35%;
+ margin-top:10%;
+ display:block;
+ background:#82a43a;
+ color:white;
+ width:30%;
+ font-size:20px;}
+ button.b2{box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ margin-left:35%;
+ margin-top:5%;
+ background:#82a43a;
+ color:white;
+ width:30%;
+ font-size:20px;}
+	</style>
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Rainfall Prediction</label>
+      <ul>
+        <li><a class="active" href="home">Home</a></li>
+        <li><a href="state">State Wise</a></li>
+        <li><a href="districts">District Wise</a></li>
+        <li><a href="prediction">Prediction</a></li>
+        
+      </ul>
+    </nav>
+    <a href="/login1"><button class="button log">logout</a></button>
+	<button class="button b1"><a href="state">Machine Learning</a></button>
+<button class="button b2"><a href="/statedl">Deep Learning</a></button>
+  </body>
+</html>
